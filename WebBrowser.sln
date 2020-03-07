@@ -4,6 +4,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28307.1022
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBrowser.UI", "WebBrowser.UI\WebBrowser.UI.csproj", "{F334F38F-B48B-4F46-8B27-E7F255771321}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8A60F85A-6635-4C7B-BF35-4AD7024ADC44} = {8A60F85A-6635-4C7B-BF35-4AD7024ADC44}
+		{09AAAD90-CAEB-4F52-98EC-63B7FAB2171D} = {09AAAD90-CAEB-4F52-98EC-63B7FAB2171D}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBrowser.Logic", "WebBrowser.Logic\WebBrowser.Logic.csproj", "{8A60F85A-6635-4C7B-BF35-4AD7024ADC44}"
 EndProject
