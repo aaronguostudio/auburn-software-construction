@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace WebBrowser.Data
 {
-    public class Class1
+    class Request
     {
+        // Url
+        public static string Url;
+
+        // request to the resource
+        public static void request () { }
     }
 }

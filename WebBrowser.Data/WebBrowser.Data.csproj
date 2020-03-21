@@ -41,7 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="models\BookMark.cs" />
+    <Compile Include="models\BookMarkFolder.cs" />
+    <Compile Include="models\Browser.cs" />
+    <Compile Include="models\Favorite.cs" />
+    <Compile Include="models\History.cs" />
+    <Compile Include="models\Printer.cs" />
+    <Compile Include="models\Request.cs" />
+    <Compile Include="models\Tab.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
