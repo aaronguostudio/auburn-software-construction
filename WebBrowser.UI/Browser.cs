@@ -21,5 +21,12 @@ namespace WebBrowser.UI
         {
             Application.Exit();
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string message = "A Plus Browser is a light weight browser offers very simple browsing functionalies. Current verson 1.0";
+            string caption = "A Plus Browser";
+            MessageBox.Show(message, caption, MessageBoxButtons.OK);
+        }
     }
 }
