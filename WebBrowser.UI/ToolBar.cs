@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using WebBrowser.Logic;
 
 namespace WebBrowser.UI
 {
@@ -40,6 +41,20 @@ namespace WebBrowser.UI
             currentUrl = url;
             forwardLinks.Clear();
             updateUI();
+            saveHistory();
+        }
+
+        private void saveHistory()
+        {
+            TabControl tabControl = (TabControl) Parent.Parent;
+            HistoryItem item = new HistoryItem();
+            if (innerBrowser.Url != null)
+            {
+                item.Title = tabControl.SelectedTab.Text;
+                item.URL = innerBrowser.Url.ToString();
+                item.Date = (DateTime)System.Data.SqlTypes.SqlDateTime.MinValue;
+                HistoryManager.AddItem(item);
+            }
         }
 
         private void back()
@@ -92,6 +107,18 @@ namespace WebBrowser.UI
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             innerBrowser.Navigate(currentUrl);
+        }
+
+        private void btnFavorite_Click(object sender, EventArgs e)
+        {
+            TabControl tabControl = (TabControl) Parent.Parent;
+            if (innerBrowser.Url != null)
+            {
+                BookmarkItem item = new BookmarkItem();
+                item.Title = tabControl.Name;
+                item.URL = innerBrowser.Url.ToString();
+                BookmarkManager.Add(item);
+            }
         }
     }
 }

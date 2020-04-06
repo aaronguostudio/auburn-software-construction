@@ -121,14 +121,14 @@
             // manageHistoryToolStripMenuItem
             // 
             this.manageHistoryToolStripMenuItem.Name = "manageHistoryToolStripMenuItem";
-            this.manageHistoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageHistoryToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.manageHistoryToolStripMenuItem.Text = "Manage History";
             this.manageHistoryToolStripMenuItem.Click += new System.EventHandler(this.manageHistoryToolStripMenuItem_Click);
             // 
             // manageBookmarksToolStripMenuItem
             // 
             this.manageBookmarksToolStripMenuItem.Name = "manageBookmarksToolStripMenuItem";
-            this.manageBookmarksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageBookmarksToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.manageBookmarksToolStripMenuItem.Text = "Manage Bookmarks";
             this.manageBookmarksToolStripMenuItem.Click += new System.EventHandler(this.manageBookmarksToolStripMenuItem_Click);
             // 
@@ -187,6 +187,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Browser";
             this.Text = "A Plus Browser";
+            this.Load += new System.EventHandler(this.Browser_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Browser_KeyDown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -77,5 +77,10 @@ namespace WebBrowser.UI
             BookmarkManagerForm bookmarkManagerForm = new BookmarkManagerForm();
             bookmarkManagerForm.ShowDialog();
         }
+
+        private void Browser_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

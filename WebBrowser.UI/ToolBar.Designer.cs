@@ -121,6 +121,7 @@
             this.btnFavorite.Name = "btnFavorite";
             this.btnFavorite.Size = new System.Drawing.Size(23, 22);
             this.btnFavorite.Text = "Bookmark";
+            this.btnFavorite.Click += new System.EventHandler(this.btnFavorite_Click);
             // 
             // innerBrowser
             // 

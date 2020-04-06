@@ -12,7 +12,7 @@ namespace WebBrowser.Logic
         public static void Add(BookmarkItem bookmarkItem)
         {
             var adapter = new BookmarksTableAdapter();
-            adapter.Insert(bookmarkItem.Title, bookmarkItem.URL);
+            adapter.Insert(bookmarkItem.URL, bookmarkItem.Title);
         }
 
         public static List<BookmarkItem> GetItems()
@@ -25,8 +25,8 @@ namespace WebBrowser.Logic
             {
                 var item = new BookmarkItem();
                 item.Id = row.Id;
-                item.Title = item.Title;
-                item.URL = item.URL;
+                item.Title = row.Title;
+                item.URL = row.URL;
                 results.Add(item);
             }
 
