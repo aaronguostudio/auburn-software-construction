@@ -53,7 +53,7 @@ namespace WebBrowser.UI
 
         private void closeTab()
         {
-            this.tabControl.TabPages.RemoveAt(this.tabControl.SelectedIndex);
+            tabControl.TabPages.RemoveAt(tabControl.SelectedIndex);
         }
 
         private void newTabToolStripMenuItem_Click(object sender, EventArgs e)

@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WebBrowser.Logic;
 
@@ -20,13 +15,41 @@ namespace WebBrowser.UI
 
         private void HistoryManager_Load(object sender, EventArgs e)
         {
-            var histories = HistoryManager.GetItems();
-            listBoxHistories.Items.Clear();
+            load();
+        }
 
-            foreach(var item in histories)
+        private void load()
+        {
+            var items = HistoryManager.GetItems();
+            listBoxHistories.Items.Clear();
+            foreach (HistoryItem item in items)
             {
-                listBoxHistories.Items.Add(string.Format("[{0}] {1} - ({2})", item.Date, item.Title, item.URL));
+                listBoxHistories.Items.Add(item);
             }
+        }
+
+        private void btnSearchHistory_Click(object sender, EventArgs e)
+        {
+            var histories = HistoryManager.GetItems(); 
+            var filtered = histories.Where(h => h.Title.ToLower().Contains(textSearchHistory.Text.ToLower()));
+            listBoxHistories.Items.Clear();
+            foreach(HistoryItem item in filtered)
+            {
+                listBoxHistories.Items.Add(item);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            HistoryItem item = (HistoryItem) listBoxHistories.SelectedItem;
+            HistoryManager.DeleteItem(item);
+            load();
+        }
+
+        private void btnDeleteAll_Click(object sender, EventArgs e)
+        {
+            HistoryManager.DeleteAll();
+            load();
         }
     }
 }

@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WebBrowser.Logic;
 
@@ -20,13 +14,41 @@ namespace WebBrowser.UI
 
         private void BookmarkManagerForm_Load(object sender, EventArgs e)
         {
+            load();
+        }
+
+        private void load()
+        {
             var bookmarks = BookmarkManager.GetItems();
             listBoxBookmarks.Items.Clear();
-
             foreach (var item in bookmarks)
             {
-                listBoxBookmarks.Items.Add(string.Format("{0} - ({1})", item.Title, item.URL));
+                listBoxBookmarks.Items.Add(item);
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            var bookmarks = BookmarkManager.GetItems();
+            var filtered = bookmarks.FindAll(b => b.Title.ToLower().Contains(textBookmarkSearch.Text.ToLower()));
+            listBoxBookmarks.Items.Clear();
+            foreach (BookmarkItem item in filtered)
+            {
+                listBoxBookmarks.Items.Add(item);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            BookmarkItem item = (BookmarkItem)listBoxBookmarks.SelectedItem;
+            BookmarkManager.DeleteItem(item);
+            load();
+        }
+
+        private void btnDeleteAll_Click(object sender, EventArgs e)
+        {
+            BookmarkManager.DeleteAll();
+            load();
         }
     }
 }

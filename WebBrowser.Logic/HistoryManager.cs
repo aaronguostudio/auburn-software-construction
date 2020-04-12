@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using WebBrowser.Data.HistoryDataSetTableAdapters;
 
 namespace WebBrowser.Logic
@@ -32,6 +28,22 @@ namespace WebBrowser.Logic
             }
 
             return results;
+        }
+
+        public static void DeleteItem(HistoryItem historyItem)
+        {
+            var adapter = new HistoryTableAdapter();
+            adapter.Delete(historyItem.Id, historyItem.URL, historyItem.Title, historyItem.Date);
+        }
+
+        public static void DeleteAll()
+        {
+            var adapter = new HistoryTableAdapter();
+            var rows = adapter.GetData();
+            foreach (var row in rows)
+            {
+                adapter.Delete(row.Id, row.URL, row.Title, row.Date);
+            }
         }
     }
 }

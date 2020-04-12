@@ -30,26 +30,23 @@ namespace WebBrowser.UI
         private void navigate(string url)
         {
             if (url == "")
-            {
                 return;
-            }
+
             innerBrowser.Navigate(url);
             if (currentUrl != "")
-            {
                 backLinks.Push(currentUrl);
-            }
+
             currentUrl = url;
             forwardLinks.Clear();
             updateUI();
-            saveHistory();
         }
 
         private void saveHistory()
         {
             TabControl tabControl = (TabControl) Parent.Parent;
-            HistoryItem item = new HistoryItem();
             if (innerBrowser.Url != null)
             {
+                HistoryItem item = new HistoryItem();
                 item.Title = tabControl.SelectedTab.Text;
                 item.URL = innerBrowser.Url.ToString();
                 item.Date = (DateTime)System.Data.SqlTypes.SqlDateTime.MinValue;
@@ -115,10 +112,35 @@ namespace WebBrowser.UI
             if (innerBrowser.Url != null)
             {
                 BookmarkItem item = new BookmarkItem();
-                item.Title = tabControl.Name;
+                item.Title = tabControl.SelectedTab.Text;
                 item.URL = innerBrowser.Url.ToString();
                 BookmarkManager.Add(item);
             }
+        }
+
+        private void innerBrowser_Navigated(object sender, WebBrowserNavigatedEventArgs e)
+        {
+            statusLabel.Text = "Done";
+            statusProgressBar.Style = ProgressBarStyle.Blocks;
+            TabControl tabControl = (TabControl)Parent.Parent;
+            tabControl.SelectedTab.Text = innerBrowser.DocumentTitle;
+            saveHistory();
+        }
+
+        private void innerBrowser_Navigating(object sender, WebBrowserNavigatingEventArgs e)
+        {
+            statusLabel.Text = "Loading";
+            statusProgressBar.Style = ProgressBarStyle.Marquee;
+        }
+
+        private void statusLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void innerBrowser_Move(object sender, EventArgs e)
+        {
+
         }
     }
 }

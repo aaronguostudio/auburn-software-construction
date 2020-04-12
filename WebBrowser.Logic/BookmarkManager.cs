@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using WebBrowser.Data.BookmarkDataSetTableAdapters;
 
 namespace WebBrowser.Logic
@@ -31,6 +27,22 @@ namespace WebBrowser.Logic
             }
 
             return results;
+        }
+
+        public static void DeleteItem(BookmarkItem bookmarkItem)
+        {
+            var adapter = new BookmarksTableAdapter();
+            adapter.Delete(bookmarkItem.Id, bookmarkItem.URL, bookmarkItem.Title);
+        }
+
+        public static void DeleteAll()
+        {
+            var adapter = new BookmarksTableAdapter();
+            var rows = adapter.GetData();
+            foreach(var row in rows)
+            {
+                adapter.Delete(row.Id, row.URL, row.Title);
+            }
         }
     }
 }
