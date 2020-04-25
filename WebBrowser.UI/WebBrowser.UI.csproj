@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -86,11 +86,6 @@
     <Compile Include="Browser.Designer.cs">
       <DependentUpon>Browser.cs</DependentUpon>
     </Compile>
-    <Compile Include="BrowserDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BrowserDBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="HistoryManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,17 +121,6 @@
     <EmbeddedResource Include="ToolBar.resx">
       <DependentUpon>ToolBar.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="BrowserDBDataSet.xsc">
-      <DependentUpon>BrowserDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="BrowserDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BrowserDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BrowserDBDataSet.xss">
-      <DependentUpon>BrowserDBDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

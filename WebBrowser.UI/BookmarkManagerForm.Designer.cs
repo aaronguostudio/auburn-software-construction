@@ -42,11 +42,10 @@
             // 
             // listBoxBookmarks
             // 
-            this.listBoxBookmarks.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBoxBookmarks.FormattingEnabled = true;
-            this.listBoxBookmarks.Location = new System.Drawing.Point(0, 0);
+            this.listBoxBookmarks.Location = new System.Drawing.Point(0, 26);
             this.listBoxBookmarks.Name = "listBoxBookmarks";
-            this.listBoxBookmarks.Size = new System.Drawing.Size(800, 450);
+            this.listBoxBookmarks.Size = new System.Drawing.Size(800, 420);
             this.listBoxBookmarks.TabIndex = 0;
             // 
             // toolStrip1

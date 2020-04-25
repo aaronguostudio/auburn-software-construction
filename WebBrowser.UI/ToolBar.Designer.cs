@@ -40,10 +40,10 @@
             this.btnFavorite = new System.Windows.Forms.ToolStripButton();
             this.innerBrowser = new System.Windows.Forms.WebBrowser();
             this.statusBar = new System.Windows.Forms.StatusStrip();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusProgressBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusLink = new System.Windows.Forms.ToolStripStatusLabel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStrip1.SuspendLayout();
             this.statusBar.SuspendLayout();
             this.SuspendLayout();
@@ -154,17 +154,6 @@
             this.statusBar.TabIndex = 4;
             this.statusBar.Text = "statusStrip1";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // statusLabel
-            // 
-            this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(0, 17);
-            this.statusLabel.Click += new System.EventHandler(this.statusLabel_Click);
-            // 
             // statusProgressBar
             // 
             this.statusProgressBar.Name = "statusProgressBar";
@@ -172,10 +161,21 @@
             this.statusProgressBar.Step = 20;
             this.statusProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
+            // statusLabel
+            // 
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(0, 17);
+            this.statusLabel.Click += new System.EventHandler(this.statusLabel_Click);
+            // 
             // statusLink
             // 
             this.statusLink.Name = "statusLink";
             this.statusLink.Size = new System.Drawing.Size(0, 17);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // ToolBar
             // 

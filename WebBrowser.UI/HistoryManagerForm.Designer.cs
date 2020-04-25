@@ -42,11 +42,10 @@
             // 
             // listBoxHistories
             // 
-            this.listBoxHistories.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBoxHistories.FormattingEnabled = true;
-            this.listBoxHistories.Location = new System.Drawing.Point(0, 0);
+            this.listBoxHistories.Location = new System.Drawing.Point(0, 26);
             this.listBoxHistories.Name = "listBoxHistories";
-            this.listBoxHistories.Size = new System.Drawing.Size(800, 450);
+            this.listBoxHistories.Size = new System.Drawing.Size(800, 420);
             this.listBoxHistories.TabIndex = 0;
             // 
             // toolStrip1

@@ -26,8 +26,8 @@ namespace WebBrowser.Data.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\BrowserDB.mdf" +
-            ";Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\aaron\\auburn-software-cons" +
+            "tructuon\\WebBrowser\\WebBrowser.Data\\BrowserDB.mdf;Integrated Security=True")]
         public string BrowserDBConnectionString {
             get {
                 return ((string)(this["BrowserDBConnectionString"]));
